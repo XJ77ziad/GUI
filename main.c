@@ -69,7 +69,7 @@ int main() {
             DrawText("Code:",10,450,30,PURPLE);
             DrawText("3abood el ahbl",10,490,30,BLACK);
             DrawText("23-101279",400,490,30,BLACK);
-            DrawText("Moatez Hindy",10,530,30,BLACK);
+            DrawText("Moataz Hindy",10,530,30,BLACK);
             DrawText("23-101290",400,530,30,BLACK);
             DrawText("Hassan Ahmed",10,570,30,BLACK);
             DrawText("Blank",400,570,30,BLACK);
@@ -81,6 +81,7 @@ int main() {
         EndDrawing();
     }
     UnloadMusicStream(gamemusic);
+    UnloadSound(sfx);
     CloseAudioDevice();
     CloseWindow();
     return 0;
