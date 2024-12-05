@@ -2,6 +2,7 @@
 #define RAYGUI_IMPLEMENTATION
 #include "raygui.h"
 
+
 typedef enum {MAIN,GAME,SETTINGS,CREDITS}screen;
 
 int main() {
@@ -13,6 +14,7 @@ int main() {
     float volume_sfx = 0.5f;
     Music gamemusic = LoadMusicStream("D:\\ProjectGUI\\DOOM.mp3");
     Sound sfx = LoadSound("D:\\ProjectGUI\\CLICK.mp3");
+    Texture2D background = LoadTexture("D:\\ProjectGUI\\background.jpg");
 
     SetTargetFPS(144);
 
@@ -24,6 +26,7 @@ int main() {
         ClearBackground(RAYWHITE);
 
         BeginDrawing();
+        DrawTexture(background, 0, 0, WHITE);
         if (x == MAIN){
             if (GuiButton((Rectangle){350,600,100,50},"START")){
                 PlaySound(sfx);
@@ -59,24 +62,24 @@ int main() {
                 PlaySound(sfx);
                 x = MAIN;
             }
-            DrawText("Credits",310,200,50,BLACK);
+            DrawText("Credits",(GetScreenWidth()- MeasureText("Credits",50))/2,200,50,WHITE);
             DrawText("GUI:",10,300,30,PURPLE);
-            DrawText("Saif Haytham",10,340,30,BLACK);
-            DrawText("23-101282",400,340,30,BLACK);
-            DrawText("Ziad Mohamed",10,380,30,BLACK);
-            DrawText("23-101280",400,380,30,BLACK);
+            DrawText("Saif Haytham",10,340,30,WHITE);
+            DrawText("23-101282",400,340,30,WHITE);
+            DrawText("Ziad Mohamed",10,380,30,WHITE);
+            DrawText("23-101280",400,380,30,WHITE);
 
             DrawText("Code:",10,450,30,PURPLE);
-            DrawText("3abood el ahbl",10,490,30,BLACK);
-            DrawText("23-101279",400,490,30,BLACK);
-            DrawText("Moataz Hindy",10,530,30,BLACK);
-            DrawText("23-101290",400,530,30,BLACK);
-            DrawText("Hassan Ahmed",10,570,30,BLACK);
-            DrawText("Blank",400,570,30,BLACK);
+            DrawText("3abood el ahbl",10,490,30,WHITE);
+            DrawText("23-101279",400,490,30,WHITE);
+            DrawText("Moataz Hindy",10,530,30,WHITE);
+            DrawText("23-101290",400,530,30,WHITE);
+            DrawText("Hassan Ahmed",10,570,30,WHITE);
+            DrawText("Blank",400,570,30,WHITE);
 
             DrawText("Data Base:",10,640,30,PURPLE);
-            DrawText("Ahmed Zaytoun",10,680,30,BLACK);
-            DrawText("23-101329",400,680,30,BLACK);
+            DrawText("Ahmed Zaytoun",10,680,30,WHITE);
+            DrawText("23-101329",400,680,30,WHITE);
         }
         EndDrawing();
     }
